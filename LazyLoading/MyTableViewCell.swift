@@ -8,15 +8,14 @@
 import UIKit
 
 class MyTableViewCell: UITableViewCell {
-    @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet weak var cellImageView: UIImageView!
-    
-    let imageLoader = ImageLoader()
     let imageURLs = [
         "https://wallpaperaccess.com/download/europe-4k-1369012",
         "https://wallpaperaccess.com/download/europe-4k-1318341",
         "https://wallpaperaccess.com/download/europe-4k-1379801"
     ]
+    
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var cellImageView: UIImageView!
     
     override func prepareForReuse() {
         self.cellLabel.text = .none
@@ -24,17 +23,19 @@ class MyTableViewCell: UITableViewCell {
         self.backgroundColor = .none
     }
     
-    func updateContent(at indexPath: IndexPath, of tableView: UITableView) {
+    func updateImage(at indexPath: IndexPath, of tableView: UITableView) {
         guard let imagePath = URL(string: imageURLs[indexPath.row]) else {
             return
         }
         
-        imageLoader.loadImage(imagePath: imagePath) { imageView in
+        ImageLoader.shared.loadImage(imagePath: imagePath) { imageView in
             if indexPath == tableView.indexPath(for: self) {
                 self.cellImageView.image = imageView
             }
         }
-
+    }
+    
+    func updateLabelAndBackground(at indexPath: IndexPath) {
         if indexPath.section <= 4 {
             self.cellLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
         }

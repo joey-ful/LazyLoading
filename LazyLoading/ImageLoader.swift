@@ -8,11 +8,11 @@
 import UIKit
 
 class ImageLoader {
+    static let shared = ImageLoader()
     var cache: [URL:UIImage] = [:]
     
     func loadImage(imagePath: URL, completionHandler: @escaping (UIImage) -> ()) {
         if let imageView = cache[imagePath] {
-            print(imagePath)
             DispatchQueue.main.async {
                 completionHandler(imageView)
             }

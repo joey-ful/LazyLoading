@@ -34,11 +34,12 @@ extension ViewController: UITableViewDataSource {
         }
         
         cell.cellImageView.image = UIImage(systemName: "photo")
-
-        if indexPath.row <= 2 {
-            cell.updateContent(at: indexPath, of: tableView)
-        }
+        cell.updateLabelAndBackground(at: indexPath)
         
+        if indexPath.row <= 2 {
+            cell.updateImage(at: indexPath, of: tableView)
+        }
+
         return cell
     }
 }
