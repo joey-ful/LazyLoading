@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyCell: UITableViewCell {
+class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
     
@@ -19,8 +19,8 @@ class MyCell: UITableViewCell {
     ]
     
     override func prepareForReuse() {
-        self.textLabel?.text = .none
-        self.imageView?.image = .none
+        self.cellLabel.text = .none
+        self.cellImageView.image = .none
         self.backgroundColor = .none
     }
     
@@ -36,7 +36,7 @@ class MyCell: UITableViewCell {
         }
 
         if indexPath.section <= 4 {
-            self.cellLabel.text = "(\(indexPath.section), \(indexPath.row))"
+            self.cellLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
         }
 
         if indexPath.row == 3 {

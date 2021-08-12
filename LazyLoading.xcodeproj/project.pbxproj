@@ -14,7 +14,7 @@
 		D460FF8826C4AD650004BE3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D460FF8726C4AD650004BE3F /* Assets.xcassets */; };
 		D460FF8B26C4AD650004BE3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D460FF8926C4AD650004BE3F /* LaunchScreen.storyboard */; };
 		D460FF9A26C4D97A0004BE3F /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460FF9926C4D97A0004BE3F /* ImageLoader.swift */; };
-		D460FFA126C4E76B0004BE3F /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460FFA026C4E76B0004BE3F /* MyCell.swift */; };
+		D460FFA126C4E76B0004BE3F /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D460FFA026C4E76B0004BE3F /* MyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		D460FF8A26C4AD650004BE3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D460FF8C26C4AD650004BE3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D460FF9926C4D97A0004BE3F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		D460FFA026C4E76B0004BE3F /* MyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		D460FFA026C4E76B0004BE3F /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				D460FF8226C4AD630004BE3F /* ViewController.swift */,
 				D460FF9926C4D97A0004BE3F /* ImageLoader.swift */,
 				D460FF8426C4AD630004BE3F /* Main.storyboard */,
-				D460FFA026C4E76B0004BE3F /* MyCell.swift */,
+				D460FFA026C4E76B0004BE3F /* MyTableViewCell.swift */,
 				D460FF8726C4AD650004BE3F /* Assets.xcassets */,
 				D460FF8926C4AD650004BE3F /* LaunchScreen.storyboard */,
 				D460FF8C26C4AD650004BE3F /* Info.plist */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D460FF8326C4AD630004BE3F /* ViewController.swift in Sources */,
-				D460FFA126C4E76B0004BE3F /* MyCell.swift in Sources */,
+				D460FFA126C4E76B0004BE3F /* MyTableViewCell.swift in Sources */,
 				D460FF7F26C4AD630004BE3F /* AppDelegate.swift in Sources */,
 				D460FF9A26C4D97A0004BE3F /* ImageLoader.swift in Sources */,
 				D460FF8126C4AD630004BE3F /* SceneDelegate.swift in Sources */,
