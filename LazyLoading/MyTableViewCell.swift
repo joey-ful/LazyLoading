@@ -37,7 +37,7 @@ class MyTableViewCell: UITableViewCell {
     
     func initData(at indexPath: IndexPath) {
         if indexPath.section <= 4 {
-            self.cellLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
+            self.cellLabel.text = "Section \(indexPath.section) Row \(indexPath.row) IndexPath \(indexPath)"
         }
 
         if indexPath.row == 3 {
