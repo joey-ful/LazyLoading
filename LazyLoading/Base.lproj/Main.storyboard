@@ -31,20 +31,22 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BPL-U7-g0a">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-Yt-acg">
-                                                            <rect key="frame" x="5" y="5" width="83" height="90"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="ujD-Yt-acg">
+                                                            <rect key="frame" x="0.0" y="8.5" width="83" height="83"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="80" id="0XW-os-jZE"/>
                                                                 <constraint firstAttribute="width" secondItem="ujD-Yt-acg" secondAttribute="height" multiplier="1:1" id="kDX-C0-pyv"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6U-Ex-j2V">
-                                                            <rect key="frame" x="98" y="40" width="316" height="20.5"/>
+                                                            <rect key="frame" x="93" y="40" width="321" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="ujD-Yt-acg" firstAttribute="width" secondItem="BPL-U7-g0a" secondAttribute="width" multiplier="0.2" id="FUV-SL-uMJ"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -54,12 +56,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="BPL-U7-g0a" secondAttribute="trailing" id="ngd-QY-0vW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="ujD-Yt-acg" firstAttribute="leading" secondItem="Rbz-Ea-GWc" secondAttribute="leading" constant="5" id="H76-hj-S64"/>
-                                            <constraint firstAttribute="bottom" secondItem="ujD-Yt-acg" secondAttribute="bottom" constant="5" id="K7H-Gd-giz"/>
-                                            <constraint firstItem="ujD-Yt-acg" firstAttribute="top" secondItem="Rbz-Ea-GWc" secondAttribute="top" constant="5" id="R3t-C0-sJN"/>
-                                            <constraint firstItem="ujD-Yt-acg" firstAttribute="width" secondItem="Rbz-Ea-GWc" secondAttribute="width" multiplier="0.2" id="omf-bR-zyJ"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="cellImageView" destination="ujD-Yt-acg" id="W4I-VB-hoo"/>
                                             <outlet property="cellLabel" destination="M6U-Ex-j2V" id="vpq-cN-Ksy"/>

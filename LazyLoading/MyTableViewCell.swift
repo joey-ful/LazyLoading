@@ -28,14 +28,14 @@ class MyTableViewCell: UITableViewCell {
             return
         }
         
-        ImageLoader.shared.loadImage(imagePath: imagePath) { imageView in
+        ImageLoader.shared.loadImage(from: imagePath, at: self) { imageData in
             if indexPath == tableView.indexPath(for: self) {
-                self.cellImageView.image = imageView
+                self.cellImageView.image = imageData
             }
         }
     }
     
-    func updateLabelAndBackground(at indexPath: IndexPath) {
+    func initData(at indexPath: IndexPath) {
         if indexPath.section <= 4 {
             self.cellLabel.text = "Section \(indexPath.section) Row \(indexPath.row)"
         }

@@ -9,25 +9,27 @@ import UIKit
 
 class ImageLoader {
     static let shared = ImageLoader()
-    var cache: [URL:UIImage] = [:]
+    var imageCache = NSCache<NSString,UIImage>()
     
-    func loadImage(imagePath: URL, completionHandler: @escaping (UIImage) -> ()) {
-        if let imageView = cache[imagePath] {
+    func loadImage(from imagePath: URL, at cell: MyTableViewCell, completionHandler: @escaping (UIImage) -> ()) {
+        
+        if let cachedImageData = imageCache.object(forKey: imagePath.absoluteString as NSString) {
             DispatchQueue.main.async {
-                completionHandler(imageView)
+                completionHandler(cachedImageData)
             }
         } else {
+            cell.cellImageView.image = UIImage(systemName: "photo")
             URLSession.shared.dataTask(with: imagePath) { (data, response, error) in
                 guard error == nil else { return }
                 guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
                       (200..<300).contains(statusCode) else { return }
                 guard let data = try? Data(contentsOf: imagePath) else { return }
-                guard let imageView = UIImage(data: data) else { return }
+                guard let imageData = UIImage(data: data) else { return }
                 
-                self.cache[imagePath] = imageView
+                self.imageCache.setObject(imageData, forKey: imagePath.absoluteString as NSString)
                 
                 DispatchQueue.main.async {
-                    completionHandler(imageView)
+                    completionHandler(imageData)
                 }
                 
             }.resume()
